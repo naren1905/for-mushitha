@@ -134,6 +134,23 @@
   footer { position: relative; z-index: 1; text-align: center; padding: 40px 20px 60px; color: #b07a8d; font-size: .9rem; }
   footer .big { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--pink-deep); margin-bottom: 8px; }
 
+  /* ---------- gallery & video ---------- */
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2.4rem); margin-bottom: 34px; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; max-width: 780px; width: 100%; }
+  .gallery figure {
+    border-radius: 16px; overflow: hidden; background: #fff; padding: 0;
+    box-shadow: 0 16px 40px rgba(201,79,124,.22); border: 4px solid #fff;
+    transform: rotate(-1.5deg); transition: transform .35s, box-shadow .35s; cursor: zoom-in;
+  }
+  .gallery figure:nth-child(even) { transform: rotate(1.5deg); }
+  .gallery figure:hover { transform: rotate(0) scale(1.05); box-shadow: 0 24px 60px rgba(201,79,124,.38); }
+  .gallery img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+  #lightbox { position: fixed; inset: 0; background: rgba(90,42,60,.88); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 100; cursor: zoom-out; padding: 20px; }
+  #lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 14px; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 920px; width: 100%; }
+  .video-wrap { max-width: 640px; width: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 24px 60px rgba(201,79,124,.3); border: 5px solid #fff; background: #fff; }
+  .video-wrap video { width: 100%; display: block; }
+
   /* click sparkle */
   .spark { position: fixed; pointer-events: none; z-index: 50; font-size: 1.3rem; animation: sparkUp 1.2s ease-out forwards; }
   @keyframes sparkUp { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(-90px) scale(1.6); } }
@@ -160,7 +177,31 @@
       <div class="cake-emoji">🎂</div>
     </div>
     <p class="hint" id="cake-hint">tap the cake to blow out the candles</p>
-    <div class="wish-msg" id="wish-msg">your wish already came true  you have me, forever 💍</div>
+    <div class="wish-msg" id="wish-msg">your wish already came true — you have me, forever 💍</div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="moments">
+    <h2 class="section-title">a few of my favourite moments with you 📸</h2>
+    <div class="gallery">
+      <figure><img src="photo1.jpeg" alt="a memory of us" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="photo2.jpeg" alt="a memory of us" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="photo3.jpeg" alt="a memory of us" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+      <figure><img src="photo4.jpeg" alt="a memory of us" loading="lazy" onerror="this.closest('figure').remove()"></figure>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="video-sec">
+    <h2 class="section-title">your special day, forever on replay 🎥</h2>
+    <div class="video-grid">
+      <div class="video-wrap">
+        <video controls playsinline preload="metadata" src="birthday1.mp4" onerror="this.closest('.video-wrap').remove()"></video>
+      </div>
+      <div class="video-wrap">
+        <video controls playsinline preload="metadata" src="birthday2.mp4" onerror="this.closest('.video-wrap').remove()"></video>
+      </div>
+    </div>
   </section>
 
   <!-- LETTER -->
@@ -175,14 +216,14 @@
 
     <div class="letter-card" id="letter">
       <div class="salute">My dearest Mushitha,</div>
-      <p>Happy birthday. Somewhere between our first hello and today, you became my best friend , the one I want to tell everything to first, the one whose laugh can fix my worst days, the one I can be completely.</p>
-      <p>And the most beautiful part? This is only the beginning. Ahead of us is a whole lifetime  a good, warm, beautiful life , and I honestly cannot wait to witness every single moment of it with you.</p>
-      <p>It's not just me, by the way. Everyone in my family has liked you much. You are already being welcomed as our <em>"Maa inti bangaram"</em>, our <em>"Petha koodalu"</em>… and so many more names are waiting for you. You're not just stepping into my life, Mushitha , you're coming home.</p>
-      <p>My only wish for your next birthday is that we celebrate it together. And I promise you this , I will give my best, every single day, to keep you safe, happy and comfortable. You will never have to face anything alone again.</p>
-      <p>Naan ippo solren , naan irukkeen unnaku eppavume… unakaaga eppavume iruppen, ella time-um iruppen.</p>
+      <p>Happy birthday. Somewhere between our first hello and today, you became my best friend — the one I want to tell everything to first, the one whose laugh can fix my worst days, the one I can be completely, unapologetically myself with.</p>
+      <p>And the most beautiful part? This is only the beginning. Ahead of us is a whole lifetime — a good, warm, beautiful life — and I honestly cannot wait to witness every single moment of it with you.</p>
+      <p>It's not just me, by the way. Everyone in my family has grown so fond of you. You are already being welcomed as our <em>"Maa inti bangaram"</em>, our <em>"Petha koodalu"</em>… and so many more names are waiting for you. You're not just stepping into my life, Mushitha — you're coming home.</p>
+      <p>My only wish for your next birthday is that we celebrate it together. And I promise you this — I will give my best, every single day, to keep you safe, happy and comfortable. You will never have to face anything alone again.</p>
+      <p>Naan ippo solren — naan irukkeen unnaku eppavume… unakaaga eppavume iruppen, ella time-um iruppen.</p>
       <p>Anytime. Anywhere. I'll always be there for you.</p>
       <p>Happy birthday, my best friend… my future wife. 💍</p>
-      <div class="sign">, forever yours, Naren ❤️</div>
+      <div class="sign">— forever yours, Naren ❤️</div>
     </div>
   </section>
 
@@ -193,6 +234,7 @@
   <div>every pixel of this page loves you as much as I do 🩷</div>
 </footer>
 
+<div id="lightbox"><img id="lightbox-img" alt="memory" /></div>
 <canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:60;"></canvas>
 <script data-goatcounter="https://naren1905.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
@@ -222,6 +264,15 @@
     document.body.appendChild(s);
     setTimeout(()=>s.remove(), 1200);
   });
+
+  /* gallery lightbox + hide empty sections */
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.gallery img').forEach(img => img.addEventListener('click', () => { lbImg.src = img.src; lb.style.display = 'flex'; }));
+  lb.addEventListener('click', () => lb.style.display = 'none');
+  window.addEventListener('load', () => setTimeout(() => {
+    if (!document.querySelector('.gallery figure')) document.querySelector('.moments').style.display = 'none';
+    if (!document.querySelector('.video-wrap')) document.querySelector('.video-sec').style.display = 'none';
+  }, 800));
 
   /* confetti */
   const cv = document.getElementById('confetti'), ctx = cv.getContext('2d');
